@@ -9,6 +9,10 @@ import random
 app = Flask(__name__)
 CORS(app)
 
+@app.route("/")
+def hello():
+    return "Hello Render!"
+
 @app.route('/api/test', methods=['GET'])
 def test_endpoint():
     return jsonify({'message': 'API is working!', 'timestamp': datetime.now().isoformat()})
